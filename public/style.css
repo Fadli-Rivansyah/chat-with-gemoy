@@ -1,0 +1,163 @@
+body {
+  font-family: "Google Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px; /* Lebih lebar agar seperti dokumen */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  box-shadow: none;
+}
+
+h1 {
+  text-align: left;
+  padding: 20px 20px 10px 20px;
+  margin: 0;
+  font-size: 24px;
+  /* Gradien warna khas Gemini */
+  background: linear-gradient(90deg, #4285f4, #9b72cb, #d96570);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px 20px 20px;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Jarak antar percakapan lebih lega */
+}
+
+.message {
+  padding: 0;
+  border-radius: 0;
+  max-width: 100%;
+  display: block;
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Pesan User: Gelembung abu-abu muda/biru */
+.message.user {
+  background-color: #f0f4f9;
+  color: #1f1f1f;
+  align-self: flex-end;
+  border-radius: 18px;
+  padding: 12px 20px;
+  max-width: 80%;
+  text-align: left;
+  margin-left: auto;
+}
+
+/* Pesan Bot: Teks bersih tanpa background */
+.message.bot {
+  color: #1f1f1f;
+  align-self: flex-start;
+  width: 100%;
+  padding-right: 10px;
+  position: relative;
+}
+
+/* Label/Ikon Gemini di atas pesan bot */
+.message.bot::before {
+  content: '✦ Gemoy';
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #4285f4, #9b72cb, #d96570);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styling elemen di dalam pesan bot */
+.message strong {
+  font-weight: 600;
+}
+
+.message h2, .message h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+/* Area Input: Bentuk Pil */
+form {
+  display: flex;
+  gap: 0;
+  padding: 6px;
+  margin: 20px;
+  background-color: #f0f4f9;
+  border-radius: 30px;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  color: #1f1f1f;
+}
+
+input[type="text"]::placeholder {
+  color: #8e918f;
+}
+
+input[type="text"]:focus {
+  border-color: transparent;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #444746;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  color: #0b57d0;
+  background-color: rgba(11, 87, 208, 0.08);
+}
+
+/* Scrollbar yang lebih halus */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #dadce0;
+  border-radius: 4px;
+}
